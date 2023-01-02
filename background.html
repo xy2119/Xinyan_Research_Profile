@@ -80,11 +80,29 @@
 									
 									<header class="style2" align="left">
 										<p style="font-size:50px">	</p>
-										<p id="1" style="font-size:25px; color:#484d55">Protein Folding</p>
+										<p id="1" style="font-size:25px; color:#484d55">Graph Neural Networks for Atomic Systems</p>
 									</header>
 									
-									<p style="font-size:20px; color:#484d55">Formally, a graph <span class="math inline">𝒢 = (𝒱,ℰ)</span> consists of nodes <span class="math inline"><em>i</em> ∈ 𝒱</span> and edges <span class="math inline">(<em>i</em>,<em>j</em>) ∈ ℰ</span> representing relationships between nodes <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>. Graphs can represent atomistic systems like molecules, where nodes are atoms and edges can represent bonds or atom pairs within a certain distance; we refer to these as atomistic graphs. Graph neural networks (GNNs) extract meaningful representations from graphs through message-passing layers.</p>
-									<p style="font-size:20px; color:#484d55">From a biochemical perspective,  protein folding is driven by the formation of weak, non-covalent interactions between different parts of the protein, such as hydrophobic interactions, hydrogen bonds, and electrostatic interactions. These interactions help stabilize the folded protein structure and give it the specific shape and function required for its role in the cell. Hydrophobic residues, which have nonpolar side chains that are not attracted to water, tend to be buried in the protein's interior during folding to minimize their unfavorable interactions with water. This burial of hydrophobic residues greatly limits the number of possible conformations the protein can assume and allows it to fold rapidly. Hydrogen bonding and electrostatic interactions can lead to the formation of secondary structure elements, such as alpha helices or beta sheets, which provide additional stability to the protein. The protein may also form tertiary structure elements, such as the packing of the interior and the fixation of surface loops.</p>
+									<p style="font-size:20px; color:#484d55">Graph neural networks (GNNs) are a type of neural network that are designed to process data that is represented in the form of a graph. In a graph <span class="math inline">𝒢 = (𝒱,ℰ)</span> , the data is represented as a set of nodes (also called vertices)  <span class="math inline"><em>i</em> ∈ 𝒱</span> , and the connections between the nodes are represented as edges <span class="math inline">(<em>i</em>,<em>j</em>) ∈ ℰ</span>. GNNs operate on graphs by passing messages between the nodes in the graph. These messages are used to update the representation of each node, taking into account the representations of its neighboring nodes. This process of message passing is repeated over multiple layers, with each layer updating the node representations based on the representations of its neighbors in the previous layer. Given feature <span
+class="math inline"><em>f</em><sub><em>i</em></sub><sup><em>l</em></sup></span>
+on node <span class="math inline"><em>i</em></span> and edge feature
+<span
+class="math inline"><em>e</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup></span>
+at the <span class="math inline"><em>l</em></span>-th layer, it first
+aggregates messages <span
+class="math inline"><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup></span>
+from neighbors and then update features on each node as follows:</p>
+<p><span
+class="math display"><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup> = <em>ϕ</em><sub><em>m</em></sub>(<em>f</em><sub><em>i</em></sub><sup><em>l</em></sup>,<em>f</em><sub><em>j</em></sub><sup><em>l</em></sup>,<em>e</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup>)  
+and
+  <em>f</em><sub><em>i</em></sub><sup><em>l</em> + 1</sup> = <em>ϕ</em><sub><em>u</em></sub>(<em>f</em><sub><em>i</em></sub><sup><em>l</em></sup>,∑<sub><em>j</em> ∈ 𝒩(<em>i</em>)</sub><em>m</em><sub><em>i</em><em>j</em></sub><sup><em>l</em></sup>)</span></p>
+<p>where <span class="math inline">𝒩(<em>i</em>)</span> denotes the set
+of neighbors of node <span class="math inline"><em>i</em></span> and
+<span class="math inline"><em>ϕ</em><sub><em>m</em></sub></span> and
+<span class="math inline"><em>ϕ</em><sub><em>u</em></sub></span> are
+learnable functions.</p>
+
+									
 
 									<p style="font-size:20px; color:#484d55">From a physical science perspective, protein folding can be viewed as a thermodynamic process in which the protein molecule transitions from an unfolded state with high entropy to a folded state with lower entropy. This transition is driven by the minimization of the protein's free energy. The native state of a protein is typically the one with the lowest free energy and is stabilized by differences in entropy and enthalpy between the native state and the unfolded state.</p>
 									<head>
