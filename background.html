@@ -74,7 +74,8 @@
 									<ol style="text-align: left">
 										<li><a href="#1" style="color:#484d55">Graph Neural Networks for Atomic Systems</a></li>
 										<li><a href="#2" style="color:#484d55">Invariant and Equivariant Neural Networks</a></li>
-										<li><a href="#3" style="color:#484d55">Irreducible Representaion on SO(3)</a></li>
+										<li><a href="#3" style="color:#484d55">Irreducible Representaion on SO(3) and Spherical Harmonics</a></li>
+										<li><a href="#4" style="color:#484d55">L2-norm of the Spherical Harmonics Expansion</a></li>
 										<li><a href="#highlights" style="color:#484d55">Train of Thought</a></li>
 									</ol>
 									
@@ -145,10 +146,34 @@ learnable functions.</p>
 									</header>
 									
 									<p style="font-size:20px; color:#484d55">Irreducible representations (irreps) of the special orthogonal group SO(3) describe how objects or functions can transform under rotations in 3D space.</p>
-									<p style="font-size:20px; color:#484d55">Clebsch-Gordan decompositions are used to decompose data with a group symmetry, such as data on a sphere or manifold, into irreps of the symmetry group. These decompositions are used to simplify the data for neural networks.</p>
-									<p style="font-size:20px; color:#484d55">Spherical harmonics are functions defined on the surface of a sphere that form a complete set of irreps of SO(3). In other words, any function defined on the surface of a sphere can be represented as a linear combination of spherical harmonics, and these harmonics capture all of the possible rotational symmetries of the function.</p>
-									<p style="font-size:20px; color:#484d55">The relationship between irreps of SO(3), Clebsch-Gordan decompositions, and spherical harmonics can be understood as follows: spherical harmonics provide a generic basis for representing functions on the surface of a sphere that are invariant under rotations. When data on a sphere is decomposed using Clebsch-Gordan decompositions, the resulting decomposition can be expressed in terms of spherical harmonics, which capture the rotational symmetries of the data. This makes it possible to use standard neural networks to process the decomposed data, allowing for more efficient and effective analysis of the data.</p>
-									<p style="font-size:20px; color:#484d55">In the context of quantum mechanics, the relationship between irreps and spherical harmonics can be understood as follows: each irrep of the rotation group corresponds to a unique set of spherical harmonics, which are used to describe the angular dependence of the wavefunction for a particle confined to a spherical region. Specifically, the irrep specifies the total angular momentum quantum number (l) and the z-component of the angular momentum quantum number (m), which completely determine the set of spherical harmonics that can be used to describe the system.</p>
+									<p style="font-size:20px; color:#484d55">Spherical harmonics is a generalization of form of the Fourier series, where the sines and cosines are replaced by more general functions that are  defined in terms of spherical coordinates rather than Cartesian coordinates. Spherical harmonics are functions defined on the surface of a sphere that form a complete set of irreps of SO(3). This means that any function defined on the surface of a sphere can be represented as a linear combination of spherical harmonics, and these harmonics capture all of the possible rotational symmetries of the function.</p>
+									<p style="font-size:20px; color:#484d55">In the context of quantum mechanics, the relationship between irreps and spherical harmonics can be understood as follows: each irrep of the rotation group corresponds to a unique set of spherical harmonics, which are used to describe the angular dependence of the wavefunction for a particle confined to a spherical region. Specifically, each irrep of the rotation group is characterized by a unique set of quantum numbers, the total angular momentum quantum number (l) and the z-component of the angular momentum quantum number (m),  where l is the degree and m is the order of the spherical harmonics. The dimension of the irrep is equal to 2l + 1, and the spherical harmonics in the irrep are labeled by the index m, which ranges from -l to l.</p>
+									<p style="font-size:20px; color:#484d55">Clebsch-Gordan decompositions are used to decompose data with a group symmetry, such as data on a sphere or manifold, into irreps of the symmetry group. Specifically, Clebsch-Gordan coefficients are used to decompose the tensor product of two irreps of a group into a direct sum of irreps.</p>
+									<p style="font-size:20px; color:#484d55">The relationship between irreps of SO(3), spherical harmonics and Clebsch-Gordan decompositions can be understood as follows: spherical harmonics provide a generic basis for representing functions on the surface of a sphere that are invariant under rotations. When data on a sphere is decomposed using Clebsch-Gordan decompositions, the resulting decomposition can be expressed in terms of spherical harmonics, which capture the rotational symmetries of the data. This makes it possible to use standard neural networks to process the decomposed data, allowing for more efficient and effective analysis of the data.</p>
+
+									<a href="#list" class="style2" align='right'>Back To Menu</a>
+									<p style="font-size:50px; color:#484d55">	</p>
+									
+									<header class="style2" align="left">
+										<p style="font-size:50px">	</p>
+										<p id="4" style="font-size:25px; color:#484d55">L2-norm of the Spherical Harmonics Expansion</p>
+									</header>
+									
+									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion is the sum of the squares of the coefficients in the expansion, given by:</p>
+									
+									<p style="font-size:20px; color:#484d55"><span class="math inline">||a||<sup>2</sup> = sum<sub><em>l</em></sub> sum<sub><em>m</em></sub> |a<sub><em>lm</em></sub>|<sup>2</sup></span></p>
+									<p style="font-size:20px; color:#484d55">where l is the degree, m is the order and a<sub><em>lm</em></sub> is the coefficient of the spherical harmonics expansion.</p>
+									<p style="font-size:20px; color:#484d55">It is a measure of the smoothness of the expansion and is often used to regularize the expansion, especially in inverse problems where the expansion is used to approximate some underlying field.</p>
+									<p style="font-size:20px; color:#484d55">The L2-norm can be interpreted as a generalization of the concept of the Euclidean norm (length), for multi-dimensional vectors. In the case of spherical harmonic expansion, the expansion coefficient vector is a multi-dimensional vector in a space where each coefficient a<sub><em>lm</em></sub> corresponds to a dimension. The L2-norm is a measure of the length of the expansion vector in this high-dimensional space.</p>
+									
+									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion has properties that make it useful for analyzing spherical harmonics expansions:</p>
+									<ol style="text-align: left">
+										<li><a href=" " style="color:#484d55">It is always non-negative: ||a||<sup>2</sup> >= 0.</a></li>
+										<li><a href=" " style="color:#484d55">It is equal to zero if and only if all of the coefficients a<sub><em>lm</em></sub> are zero: ||a||<sup>2</sup> = 0 if and only if a<sub><em>lm</em></sub> = 0 for all l and m.</a></li>
+										<li><a href=" " style="color:#484d55">It is invariant under rotation: rotating the field represented by the expansion does not change the L2-norm.</a></li>
+										<li><a href=" " style="color:#484d55">It is additive: the L2-norm of the sum of two expansions is equal to the sum of the L2-norms of the individual expansions.</a></li>
+								
+									</ol>
 
 									<a href="#list" class="style2" align='right'>Back To Menu</a>
 									<p style="font-size:50px; color:#484d55">	</p>
