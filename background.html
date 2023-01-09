@@ -159,19 +159,19 @@ learnable functions.</p>
 										<p id="4" style="font-size:25px; color:#484d55">L2-norm of the Spherical Harmonics Expansion</p>
 									</header>
 									
-									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion is the sum of the squares of the coefficients in the expansion, given by:</p>
+									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion is the sum of the squares of the coefficients in the expansion. It is a measure of the smoothness of the expansion and is often used to regularize the expansion, especially in inverse problems where the expansion is used to approximate some underlying field.</p>
 									
-									<p style="font-size:20px; color:#484d55"><span class="math inline">||a||<sup>2</sup> = sum<sub><em>l</em></sub> sum<sub><em>m</em></sub> |a<sub><em>lm</em></sub>|<sup>2</sup></span></p>
+									<p style="font-size:20px; color:#484d55"><span class="math inline">||a||<sup>2</sup> = \sum<sub><em>l</em></sub> \sum<sub><em>m</em></sub> |a<sub><em>lm</em></sub>|<sup>2</sup></span></p>
 									<p style="font-size:20px; color:#484d55">where l is the degree, m is the order and a<sub><em>lm</em></sub> is the coefficient of the spherical harmonics expansion.</p>
-									<p style="font-size:20px; color:#484d55">It is a measure of the smoothness of the expansion and is often used to regularize the expansion, especially in inverse problems where the expansion is used to approximate some underlying field.</p>
+									
 									<p style="font-size:20px; color:#484d55">The L2-norm can be interpreted as a generalization of the concept of the Euclidean norm (length), for multi-dimensional vectors. In the case of spherical harmonic expansion, the expansion coefficient vector is a multi-dimensional vector in a space where each coefficient a<sub><em>lm</em></sub> corresponds to a dimension. The L2-norm is a measure of the length of the expansion vector in this high-dimensional space.</p>
 									
 									<p style="font-size:20px; color:#484d55">The L2-norm of a spherical harmonics expansion has properties that make it useful for analyzing spherical harmonics expansions:</p>
 									<ol style="text-align: left">
-										<li><a href=" " style="color:#484d55">It is always non-negative: ||a||<sup>2</sup> >= 0.</a></li>
-										<li><a href=" " style="color:#484d55">It is equal to zero if and only if all of the coefficients a<sub><em>lm</em></sub> are zero: ||a||<sup>2</sup> = 0 if and only if a<sub><em>lm</em></sub> = 0 for all l and m.</a></li>
-										<li><a href=" " style="color:#484d55">It is invariant under rotation: rotating the field represented by the expansion does not change the L2-norm.</a></li>
-										<li><a href=" " style="color:#484d55">It is additive: the L2-norm of the sum of two expansions is equal to the sum of the L2-norms of the individual expansions.</a></li>
+										<li><a style="color:#484d55">It is always non-negative: ||a||<sup>2</sup> >= 0.</a></li>
+										<li><a style="color:#484d55">It is equal to zero if and only if all of the coefficients a<sub><em>lm</em></sub> are zero: ||a||<sup>2</sup> = 0 if and only if a<sub><em>lm</em></sub> = 0 for all l and m.</a></li>
+										<li><a style="color:#484d55">It is invariant under rotation: rotating the field represented by the expansion does not change the L2-norm.</a></li>
+										<li><a style="color:#484d55">It is additive: the L2-norm of the sum of two expansions is equal to the sum of the L2-norms of the individual expansions.</a></li>
 								
 									</ol>
 
@@ -201,7 +201,7 @@ learnable functions.</p>
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
 									<a href="" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<h3 align="left">Spherical Harmonics vs. Wigner D-matrices</h3>
+									<h3 align="left">Wigner D-matrices vs. Spherical Harmonics</h3>
 									<p style="font-size:18px; color:#484d55" align="left">Exploring the role of Wigner D-Matrices and Spherical Harmonics in describing angular momentum states</p>
 									<ul class="actions">
 										<li><a href="background-wignerD-SH.html" class="button style1">Learn More</a></li>
